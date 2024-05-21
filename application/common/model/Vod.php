@@ -525,7 +525,11 @@ class Vod extends Base {
                 $where['_string'] .= $where_string_addon;
                 $where['_string'] = trim($where['_string'], " AND ");
             } else {
-                $page_total = floor($data_count / $lp['num']) + 1;
+                if ($data_count % $lp['num'] === 0) {
+                    $page_total = floor($data_count / $lp['num']);
+                } else {
+                    $page_total = floor($data_count / $lp['num']) + 1;
+                }
                 if($data_count < $lp['num']){
                     $lp['num'] = $data_count;
                 }
