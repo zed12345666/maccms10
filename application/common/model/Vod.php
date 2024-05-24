@@ -506,16 +506,26 @@ class Vod extends Base {
             $data_count = $this->countData($where);
             $where_string_addon = "";
             if ($data_count > $algo2_threshold) {
-                $row = $this->field("MAX(vod_id) AS id_max, MIN(vod_id) AS id_min")->find();
+                $rows = $this->field("vod_id")->where($where)->select();
+                foreach ($rows as $row) {
+                    $row_data[] = $row['vod_id'];
+                }
                 if (
-                    !empty($row) && 
-                    !empty($row_data = $row->toArray()) && 
-                    !empty($row_data['id_min']) && 
-                    !empty($row_data['id_max']) && 
-                    $row_data['id_max'] > $row_data['id_min']
+                    !empty($row) &&
+                    !empty($row_data)
                 ) {
-                    $id_list = range($row_data['id_min'], $row_data['id_max']);
-                    $specified_list = array_rand($id_list, intval($algo2_threshold / 2));
+                    $randomCount = intval($algo2_threshold / 2);
+                    $specified_list = array_rand($row_data, intval($algo2_threshold / 2));
+                    $random_keys = array_rand($row_data, $randomCount);
+                    $specified_list = [];
+
+                    if ($randomCount == 1) {
+                        $specified_list[] = $row_data[$random_keys];
+                    } else {
+                        foreach ($random_keys as $key) {
+                            $specified_list[] = $row_data[$key];
+                        }
+                    }
                     if (!empty($specified_list)) {
                         $where_string_addon = " AND vod_id IN (" . join(',', $specified_list) . ")";
                     }
