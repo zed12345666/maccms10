@@ -508,22 +508,21 @@ class Vod extends Base {
             if ($data_count > $algo2_threshold) {
                 $rows = $this->field("vod_id")->where($where)->select();
                 foreach ($rows as $row) {
-                    $row_data[] = $row['vod_id'];
+                    $id_list[] = $row['vod_id'];
                 }
                 if (
-                    !empty($row) &&
-                    !empty($row_data)
+                    !empty($id_list)
                 ) {
-                    $randomCount = intval($algo2_threshold / 2);
-                    $specified_list = array_rand($row_data, intval($algo2_threshold / 2));
-                    $random_keys = array_rand($row_data, $randomCount);
+                    $random_count = intval($algo2_threshold / 2);
+                    $specified_list = array_rand($id_list, intval($algo2_threshold / 2));
+                    $random_keys = array_rand($id_list, $random_count);
                     $specified_list = [];
 
-                    if ($randomCount == 1) {
-                        $specified_list[] = $row_data[$random_keys];
+                    if ($random_count == 1) {
+                        $specified_list[] = $id_list[$random_keys];
                     } else {
                         foreach ($random_keys as $key) {
-                            $specified_list[] = $row_data[$key];
+                            $specified_list[] = $id_list[$key];
                         }
                     }
                     if (!empty($specified_list)) {
