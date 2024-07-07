@@ -730,11 +730,18 @@ class System extends Base
 
     public function configlang(){
         $param = input();
-        $config_new['app']['lang'] = $param['lang'];
-        $config_old = config('maccms');
-        $config_new = array_merge($config_old, $config_new);
+        $newLang = $param['lang'];
 
-        $res = mac_arr2file(APP_PATH . 'extra/maccms.php', $config_new);
+        $configFilePath = APP_PATH . 'extra/maccms.php';
+        $config = include $configFilePath;
+
+        if (isset($config['app'])) {
+            $config['app']['lang'] = $newLang;
+        } else {
+            $config['app'] = ['lang' => $newLang];
+        }
+
+        $res = mac_arr2file($configFilePath, $config);
         if ($res === false) {
             return $this->error(lang('save_err'));
         }
