@@ -111,7 +111,7 @@ class Type extends Base {
 
 
         if(empty($num)){
-            $num = 20;
+            $num = 50;
         }
         if($start>1){
             $start--;
