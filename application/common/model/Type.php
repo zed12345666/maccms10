@@ -111,7 +111,9 @@ class Type extends Base {
 
 
         if(empty($num)){
-            $num = 50;
+            $num = isset($GLOBALS['config']['app']['show_num']) && ctype_digit($GLOBALS['config']['app']['show_num']) && (int)$GLOBALS['config']['app']['show_num'] > 0
+                    ? (int)$GLOBALS['config']['app']['show_num']
+                    : 50;
         }
         if($start>1){
             $start--;

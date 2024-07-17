@@ -922,6 +922,9 @@ https://www.baidu.com/123.jpg
     'admin/system/config/pagesize'=>'バックエンドのページ数',
     'admin/system/config/pagesize_tip'=>'ページごとに表示されるデータ量、通常は約20に設定されます',
     'admin/system/config/lang'=>'バックエンド言語パック',
+    'admin/system/config/show_num' => 'フィルターページに表示される項目数',
+    'admin/system/config/show_num_tip' => 'フロントエンドフィルターページに表示される項目数。設定されていない場合、デフォルトは50',
+
 
     'admin/system/config/makesize'=>'ページごとに生成する数',
     'admin/system/config/makesize_tip'=>'バッチ生成では、生成ごとにページ数が少なくなります。通常は約20に設定されます',

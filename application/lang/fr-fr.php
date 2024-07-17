@@ -920,6 +920,9 @@ https://www.baidu.com/123.jpg',
     'admin/system/config/pagesize' => 'Nombre d\'éléments par page d\'administration',
     'admin/system/config/pagesize_tip' => 'Quantité de données affichées par page, généralement autour de 20',
     'admin/system/config/lang' => 'Pack de langue de l\'administration',
+    'admin/system/config/show_num' => 'Nombre d\'éléments affichés sur la page de filtre',
+    'admin/system/config/show_num_tip' => 'Nombre d\'éléments affichés sur la page de filtre du frontend. Par défaut 50 si non défini',
+
 
 
     'admin/system/config/makesize' => 'Pages à générer par lot',

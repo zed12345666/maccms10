@@ -923,6 +923,9 @@ https://www.baidu.com/123.jpg',
     'admin/system/config/pagesize'=>'Anzahl der Seiten pro Hintergrund',
     'admin/system/config/pagesize_tip'=>'Die auf jeder Seite angezeigte Datenmenge ist im Allgemeinen auf etwa 20 eingestellt',
     'admin/system/config/lang'=>'Backend-Sprachpaket',
+    'admin/system/config/show_num' => 'Anzahl der angezeigten Elemente auf der Filterseite',
+    'admin/system/config/show_num_tip' => 'Anzahl der auf der Frontend-Filterseite angezeigten Elemente. Standardmäßig 50, wenn nicht festgelegt',
+
 
     'admin/system/config/makesize'=>'Anzahl der Seiten pro Seite generieren',
     'admin/system/config/makesize_tip'=>'Die Batch-Generierung erfordert jedes Mal weniger Seiten und ist im Allgemeinen auf etwa 20 eingestellt',

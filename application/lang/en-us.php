@@ -921,6 +921,9 @@ https://www.baidu.com/123.jpg',
     'admin/system/config/pagesize'=>'Backend Pagesize',
     'admin/system/config/pagesize_tip'=>'Data displayed per page, usually set to around 20.',
     'admin/system/config/lang'=>'Backend Language Pack',
+    'admin/system/config/show_num' => 'Number of items displayed on the filter page',
+    'admin/system/config/show_num_tip' => 'Number of items displayed on the frontend filter page. Default is 50 if not set',
+
 
 
     'admin/system/config/makesize'=>'Generate per page',

@@ -921,6 +921,9 @@ https://www.baidu.com/123.jpg
     'admin/system/config/pagesize'=>'백엔드 페이지당 항목 수',
     'admin/system/config/pagesize_tip'=>'페이지당 표시되는 데이터 양, 일반적으로 약 20개로 설정',
     'admin/system/config/lang'=>'백엔드 언어 팩',
+    'admin/system/config/show_num' => '필터 페이지에 표시되는 항목 수',
+    'admin/system/config/show_num_tip' => '프론트엔드 필터 페이지에 표시되는 항목 수. 설정되지 않은 경우 기본값은 50',
+
 
     'admin/system/config/makesize'=>'페이지당 생성 수',
     'admin/system/config/makesize_tip'=>'일괄 생성 시 매번 생성되는 페이지 수가 적습니다. 일반적으로 약 20개로 설정',
