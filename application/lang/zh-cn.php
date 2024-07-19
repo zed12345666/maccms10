@@ -922,6 +922,8 @@ https://www.baidu.com/123.jpg
     'admin/system/config/pagesize'=>'后台每页数',
     'admin/system/config/pagesize_tip'=>'每页显示数据量、一般设置为20左右',
     'admin/system/config/lang'=>'后台语言包',
+    'admin/system/config/show_num'=>'筛选页类型显示数量',
+    'admin/system/config/show_num_tip'=>'前台筛选页类型显示数量,未设置默认显示50笔',
 
     'admin/system/config/makesize'=>'生成每页数',
     'admin/system/config/makesize_tip'=>'批量生成每次生成都少页、一般设置为20左右',

@@ -920,6 +920,9 @@ https://www.baidu.com/123.jpg
     'admin/system/config/pagesize'=>'Número de elementos por página en el backend',
     'admin/system/config/pagesize_tip'=>'Cantidad de datos mostrados por página, generalmente alrededor de 20.',
     'admin/system/config/lang'=>'Paquete de idioma del backend',
+    'admin/system/config/show_num' => 'Número de elementos mostrados en la página de filtro',
+    'admin/system/config/show_num_tip' => 'Número de elementos mostrados en la página de filtro del frontend. Por defecto es 50 si no se establece',
+
 
     'admin/system/config/makesize'=>'Número de elementos generados por lote',
     'admin/system/config/makesize_tip'=>'Cantidad de páginas generadas por lote, generalmente alrededor de 20.',
