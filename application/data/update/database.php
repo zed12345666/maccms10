@@ -102,19 +102,12 @@ if (version_compare(config('version.code'), '2024.1000.4043', '>=')) {
     $file = APP_PATH . 'extra/maccms.php';
     $backupFile = APP_PATH . 'extra/maccms_backup_' . date('Ymd_His') . '.php';
     
-    if (!copy($file, $backupFile)) {
-        die('Failed to create backup of ' . $file);
-    }
+    copy($file, $backupFile);
 
     @chmod($file, 0777);
-    @unlink($file);
     $config = config('maccms');
     if (strpos($config['collect']['vod']['inrule'], 'a') === false) {
         $config['collect']['vod']['inrule'] = ',a' . $config['collect']['vod']['inrule'];
-    }
-    $res = mac_arr2file($file, $config);
-
-    if ($res === false) {
-        die('Failed to write new configuration to ' . $file);
+        $res = mac_arr2file($file, $config);
     }
 }
