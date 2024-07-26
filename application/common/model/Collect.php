@@ -570,17 +570,6 @@ class Collect extends Base {
 
                 $where = [];
 
-                if (strpos($config['inrule'], 'a')==false) {
-                    echo "<script>
-                        var result = confirm('检测到『入库重复规则』未设置名称，是否跳转采集设置?');
-                        if (result) {
-                            // “确认”按钮
-                            window.location.href = '../system/configcollect.html';
-                        } else {
-                            // “取消”按钮
-                        }
-                    </script>";
-                }
                 if (strpos($config['inrule'], 'a')!==false) {
                     $where['vod_name'] = mac_filter_xss($v['vod_name']);
                 }
