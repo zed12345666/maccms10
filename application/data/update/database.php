@@ -106,8 +106,9 @@ if (version_compare(config('version.code'), '2024.1000.4043', '>=')) {
 
     @chmod($file, 0777);
     $config = config('maccms');
-    if (strpos($config['collect']['vod']['inrule'], 'a') === false) {
+    if (strpos($config['collect']['vod']['inrule'], 'a') === false  && !isset($config['inrule_first_change'])) {
         $config['collect']['vod']['inrule'] = ',a' . $config['collect']['vod']['inrule'];
+        $config['collect']['vod']['inrule_first_change']= true;
         $res = mac_arr2file($file, $config);
     }
 }
