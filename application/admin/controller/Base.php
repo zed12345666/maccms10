@@ -31,7 +31,7 @@ class Base extends All
             $this->_pagesize = $GLOBALS['config']['app']['pagesize'];
             $this->_makesize = $GLOBALS['config']['app']['makesize'];
 
-            if($this->_cl!='Update' && !$this->check_auth($this->_cl,$this->_ac)){
+            if($this->_cl!='Update' && !$this->check_auth($this->_cl,$this->_ac) && $this->_ac!='logout'){
                 return $this->error(lang('permission_denied'));
             }
         }
