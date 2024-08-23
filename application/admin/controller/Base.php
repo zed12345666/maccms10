@@ -31,7 +31,7 @@ class Base extends All
             $this->_pagesize = $GLOBALS['config']['app']['pagesize'];
             $this->_makesize = $GLOBALS['config']['app']['makesize'];
 
-            if($this->_cl!='Update' && !$this->check_auth($this->_cl,$this->_ac) && $this->_ac!='logout'){
+            if($this->_cl!='Update' && !$this->check_auth($this->_cl,$this->_ac)){
                 return $this->error(lang('permission_denied'));
             }
         }
@@ -44,7 +44,7 @@ class Base extends All
         $c = strtolower($c);
         $a = strtolower($a);
 
-        $auths = $this->_admin['admin_auth'] . ',index/index,index/welcome,';
+        $auths = $this->_admin['admin_auth'] . ',index/index,index/welcome,index/logout,';
         $cur = ','.$c.'/'.$a.',';
         if($this->_admin['admin_id'] =='1'){
             return true;
